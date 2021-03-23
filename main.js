@@ -4,7 +4,8 @@ const platform = document.querySelector("#platform");
 
 // // stats element
 const moveStats      = document.querySelector("#moves"),
-      boxesLeftStats = document.querySelector("#boxes-left");
+      boxesLeftStats = document.querySelector("#boxes-left"),
+      levelStats     = document.querySelector("#level");
 
 // initial move given in this game
 let moves = 15;
@@ -73,8 +74,14 @@ const boxes = [
                   }
               ];
 
+const game = {
+      level: 1,
+      xp: 0,
+      boxes: boxes
+}
+
 // render load the boxes into platform
-boxes.forEach(box => {
+game.boxes.forEach(box => {
 	platform.innerHTML += `<div class="box ${box.orientation}" onclick="rotate(this);">
                                  <div></div>
                                  <div></div>
@@ -101,9 +108,22 @@ function rotate(element) {
 // update game stats
 function updateStats() {
       const boxesNeedToSolved = boxes.filter(box => {
-            return box.rotation % 4 !== box.correctRotation;
+            if (box.orientation !== "none-line") {
+                  if (box.orientation == "horizontal-line" ||
+                      box.orientation == "vertical-line"
+                  ) {
+                        return box.rotation % 2 !== box.correctRotation;
+                  } else {
+                        return box.rotation % 4 !== box.correctRotation;
+                  }
+            }
       });
 
+      if (boxesNeedToSolved.length == 0) {
+            game.level++;
+      }
+
+      levelStats.textContent = game.level;
       boxesLeftStats.textContent = boxesNeedToSolved.length;
 	moveStats.textContent = moves;
 }
