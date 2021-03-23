@@ -14,71 +14,59 @@ let moves = 10;
 const boxes = [
       {
         "rotation": 0,
-        "orientation": "start-top",
-        "correctRotation": 0
-      },
-      {
-        "rotation": 0,
-        "orientation": "finish-left",
+        "orientation": "start-left",
         "correctRotation": 0
       },
       {
         "rotation": 0,
         "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
         "correctRotation": 0
       },
       {
         "rotation": 0,
-        "orientation": "left-top-line",
-        "correctRotation": 3
-      },
-      {
-        "rotation": 0,
-        "orientation": "horizontal-line",
+        "orientation": "finish-bottom",
         "correctRotation": 0
-      },
-      {
-        "rotation": 0,
-        "orientation": "left-bottom-line",
-        "correctRotation": 3
       }
-    ];
+    ]
 
 const game = {
       level: 1,
-      xp: 0,
       dimension: {
-            x: 4,
-            y: 4
+            x: 2,
+            y: 2
       },
       boxes: boxes
 }
 
 // render load the boxes into platform
-game.boxes.forEach(box => {
-	platform.innerHTML += `<div class="box ${box.orientation}" onclick="rotate(this);">
-                                 <div></div>
-                                 <div></div>
-                             </div>`;
-});
+function renderBoxes(boxes) {
+      platform.innerHTML = "";
+
+      boxes.forEach(box => {
+	      platform.innerHTML += `<div class="box ${box.orientation}" onclick="rotate(this);">
+                                       <div></div>
+                                       <div></div>
+                                   </div>`;
+      });
+}
 
 // function to rotate the box
 function rotate(element) {
 	const index = Array.prototype.indexOf.call(platform.children, element);
 	const boxToBeRotated = boxes[index];
 
-      let rotateProperty = boxToBeRotated.rotation;
-	rotateProperty++;
-      boxToBeRotated.rotation = rotateProperty;
-
-      // console.log(boxToBeRotated.orientation.includes("start"))
-      console.log(boxToBeRotated.orientation.includes("finish"));
-	// console.log(boxToBeRotated.orientation !== "none-line" || boxToBeRotated.orientation.includes("start") == false ||
- //                                                                boxToBeRotated.orientation.includes("finish") == false)
-
       if (boxToBeRotated.orientation !== "none-line" &&
           boxToBeRotated.orientation.includes("start") === false &&
           boxToBeRotated.orientation.includes("finish") === false) {
+            let rotateProperty = boxToBeRotated.rotation;
+            rotateProperty++;
+            boxToBeRotated.rotation = rotateProperty;
+
             moves--;
 	      updateStats();
 
@@ -100,13 +88,14 @@ function updateStats() {
             }
       });
 
-      if (boxesNeedToSolved.length == 0) {
-            game.level++;
-      }
+      // if (boxesNeedToSolved.length == 0) {
+      //       game.level++;
+      // }
 
       levelStats.textContent = game.level;
       boxesLeftStats.textContent = boxesNeedToSolved.length;
 	moveStats.textContent = moves;
 }
 
+renderBoxes(game.boxes);
 updateStats();

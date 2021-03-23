@@ -14,7 +14,7 @@
       },
       {
         "rotation": 0,
-        "orientation": "left-top-line",
+        "orientation": "right-top-line",
         "correctRotation": 1
       },
       {
@@ -49,12 +49,12 @@
       },
       {
         "rotation": 0,
-        "orientation": "right-top-line",
+        "orientation": "left-top-line",
         "correctRotation": 0
       },
       {
         "rotation": 0,
-        "orientation": "left-top-line",
+        "orientation": "right-top-line",
         "correctRotation": 3
       },
       {
@@ -64,7 +64,7 @@
       },
       {
         "rotation": 0,
-        "orientation": "left-bottom-line",
+        "orientation": "right-bottom-line",
         "correctRotation": 3
       }
     ]
