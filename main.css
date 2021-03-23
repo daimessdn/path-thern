@@ -15,6 +15,7 @@ body {
 	font-variant-ligatures: none;
 
 	background-image: url("space.svg");
+	background-position: center bottom;
 	background-size: cover;
 
 	display: flex;
@@ -29,13 +30,13 @@ body {
 
 	background-color: #603000;
 	padding: 5px;
-	border-radius: 4px;
+	border-radius: 10px;
 
 	transition: all .1s ease;
 
 	box-shadow: 0 8px 0 0 #b46854, 0 10px 0 0 #603000;
 
-	width: calc(8em + 10px + 10px);
+	width: calc(20em + 10px + 10px);
 }
 
 #stats {
