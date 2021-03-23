@@ -1,62 +1,72 @@
 [
   {
-    "rotation": 0,
-    "orientation": "left-bottom-line",
-    "correctRotation": 0
+    "level": 1,
+    "moves": 5,
+    "dimension": {
+      "x": 2,
+      "y": 2
+    },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "start-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-bottom",
+        "correctRotation": 0
+      }
+    ]
   },
   {
-    "rotation": 0,
-    "orientation": "right-top-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "none-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "none-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "left-top-line",
-    "correctRotation": 3
-  },
-  {
-    "rotation": 0,
-    "orientation": "left-bottom-line",
-    "correctRotation": 2
-  },
-  {
-    "rotation": 0,
-    "orientation": "none-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "left-bottom-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "vertical-line",
-    "correctRotation": 1
-  },
-  {
-    "rotation": 0,
-    "orientation": "horizontal-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "vertical-line",
-    "correctRotation": 1
-  },
-  {
-    "rotation": 0,
-    "orientation": "left-bottom-line",
-    "correctRotation": 3
+    "level": 2,
+    "moves": 5,
+    "dimension": {
+      "x": 3,
+      "y": 2
+    },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "start-top",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 3
+      }
+    ]
   }
 ]

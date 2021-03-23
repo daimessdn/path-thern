@@ -8,75 +8,49 @@ const moveStats      = document.querySelector("#moves"),
       levelStats     = document.querySelector("#level");
 
 // initial move given in this game
-let moves = 15;
+let moves = 10;
 
 // init'd boxes
 const boxes = [
-			{
-                        rotation: 0,
-                        orientation: "left-bottom-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "right-top-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "none-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "none-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "left-top-line",
-                        correctRotation: 3
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "left-bottom-line",
-                        correctRotation: 2
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "none-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "left-bottom-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "vertical-line",
-                        correctRotation: 1
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "horizontal-line",
-                        correctRotation: 0
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "vertical-line",
-                        correctRotation: 1
-                  },
-             	{
-                        rotation: 0,
-                        orientation: "left-bottom-line",
-                        correctRotation: 3
-                  }
-              ];
+      {
+        "rotation": 0,
+        "orientation": "start-top",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 3
+      }
+    ];
 
 const game = {
       level: 1,
       xp: 0,
+      dimension: {
+            x: 4,
+            y: 4
+      },
       boxes: boxes
 }
 
@@ -96,10 +70,17 @@ function rotate(element) {
       let rotateProperty = boxToBeRotated.rotation;
 	rotateProperty++;
       boxToBeRotated.rotation = rotateProperty;
-	
-      if (boxToBeRotated.orientation != "none-line") {
-      	moves--;
-      	updateStats();
+
+      // console.log(boxToBeRotated.orientation.includes("start"))
+      console.log(boxToBeRotated.orientation.includes("finish"));
+	// console.log(boxToBeRotated.orientation !== "none-line" || boxToBeRotated.orientation.includes("start") == false ||
+ //                                                                boxToBeRotated.orientation.includes("finish") == false)
+
+      if (boxToBeRotated.orientation !== "none-line" &&
+          boxToBeRotated.orientation.includes("start") === false &&
+          boxToBeRotated.orientation.includes("finish") === false) {
+            moves--;
+	      updateStats();
 
 	      element.style.transform = `rotate(${rotateProperty * 90}deg)`;
       }
