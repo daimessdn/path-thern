@@ -3,45 +3,109 @@
 const platform = document.querySelector("#platform");
 
 // // stats element
-const moveStats = document.querySelector("#moves");
+const moveStats      = document.querySelector("#moves"),
+      boxesLeftStats = document.querySelector("#boxes-left");
 
 // initial move given in this game
-let moves = 10;
+let moves = 15;
 
 // init'd boxes
 const boxes = [
-				{ rotation: 0, orientation: "left-bottom-line" },
-             	{ rotation: 0, orientation: "right-top-line" },
-             	{ rotation: 0, orientation: "none-line" },
-             	{ rotation: 0, orientation: "none-line" },
-             	{ rotation: 0, orientation: "left-top-line" },
-             	{ rotation: 0, orientation: "left-bottom-line" },
-             	{ rotation: 0, orientation: "none-line" },
-             	{ rotation: 0, orientation: "left-bottom-line" },
-             	{ rotation: 0, orientation: "vertical-line" },
-             	{ rotation: 0, orientation: "horizontal-line" },
-             	{ rotation: 0, orientation: "vertical-line" },
-             	{ rotation: 0, orientation: "left-bottom-line" }
+			{
+                        rotation: 0,
+                        orientation: "left-bottom-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "right-top-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "none-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "none-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "left-top-line",
+                        correctRotation: 3
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "left-bottom-line",
+                        correctRotation: 2
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "none-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "left-bottom-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "vertical-line",
+                        correctRotation: 1
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "horizontal-line",
+                        correctRotation: 0
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "vertical-line",
+                        correctRotation: 1
+                  },
+             	{
+                        rotation: 0,
+                        orientation: "left-bottom-line",
+                        correctRotation: 3
+                  }
               ];
 
 // render load the boxes into platform
 boxes.forEach(box => {
-	platform.innerHTML += `<div class="box ${box.orientation}" onclick="rotate(this);"><div></div><div></div></div>`;
+	platform.innerHTML += `<div class="box ${box.orientation}" onclick="rotate(this);">
+                                 <div></div>
+                                 <div></div>
+                             </div>`;
 });
 
 // function to rotate the box
 function rotate(element) {
-	const boxToBeRotated = Array.prototype.indexOf.call(platform.children, element);
+	const index = Array.prototype.indexOf.call(platform.children, element);
+	const boxToBeRotated = boxes[index];
 
-	boxes[boxToBeRotated].rotation++;
-	const finalRotate = boxes[boxToBeRotated].rotation;
+      let rotateProperty = boxToBeRotated.rotation;
+	rotateProperty++;
+      boxToBeRotated.rotation = rotateProperty;
 	
-	moves--;
-	updateStats();
+      if (boxToBeRotated.orientation != "none-line") {
+      	moves--;
+      	updateStats();
 
-	element.style.transform = `rotate(${finalRotate * 90}deg)`;
+	      element.style.transform = `rotate(${rotateProperty * 90}deg)`;
+      }
 }
 
+// update game stats
 function updateStats() {
+      const boxesNeedToSolved = boxes.filter(box => {
+            return box.rotation % 4 !== box.correctRotation;
+      });
+
+      boxesLeftStats.textContent = boxesNeedToSolved.length;
 	moveStats.textContent = moves;
 }
+
+updateStats();
