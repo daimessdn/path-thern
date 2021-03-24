@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:wght@400;600&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -15,7 +15,7 @@ body {
 	font-variant-ligatures: none;
 
 	background-image: url("space.svg");
-	background-position: center bottom;
+	background-position: center top;
 	background-size: cover;
 
 	display: flex;
@@ -28,15 +28,17 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 
-	background-color: #603000;
+	background-color: #622f10;
 	padding: 5px;
+
+	border: 5px solid #222;
 	border-radius: 10px;
 
 	transition: all .1s ease;
 
-	box-shadow: 0 8px 0 0 #b46854, 0 10px 0 0 #603000;
+	box-shadow: 0 1em 0 0 #7e4d25, 0 calc(1em + 5px) 0 0 #222;
 
-	width: calc(20em + 10px + 10px);
+	width: calc(30em + 30px + 20px);
 }
 
 #stats {
@@ -52,9 +54,50 @@ body {
 }
 
 #stats h1 {
-	font-size: 2em;
+	font-family: "Archivo Black";
+	font-size: 5em;
 }
 
 #stats p {
-	font-size: 1em;
+	font-size: 1.5em;
+}
+
+#actions {
+	position: fixed;
+	bottom: calc(4em + 16px);
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	display: flex;
+	justify-content: center;
+}
+
+.action-btn {
+	border: none;
+	color: white;
+	background-color: salmon;
+	padding: 5px;
+	margin: 5px;
+
+	cursor: pointer;
+
+	font-family: "Archivo Narrow";
+	font-size: 1.75em;
+}
+
+#notification {
+	color: #222;
+
+	position: fixed;
+	bottom: 8px;
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	font-family: "Archivo Black";
+	font-size: 4em;
+	font-weight: bold;
+
+	text-align: center;
 }
