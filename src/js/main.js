@@ -1,58 +1,30 @@
 // element selector
-// // platform
+// // platform element
 const platform = document.querySelector("#platform");
 
-const notification = document.querySelector("#notification");
-const actions = document.querySelector("#actions");
+// // notification triggers elements
+const notificationElement = document.querySelector("#notification"),
+      messageElement      = document.querySelector("#message"),
+      actionsElement      = document.querySelector("#actions");
 
-// // stats element
-const moveStats      = document.querySelector("#moves"),
-  boxesLeftStats = document.querySelector("#boxes-left"),
-  levelStats     = document.querySelector("#level");
+// // stats elements
+const moveStatsElement  = document.querySelector("#moves"),
+  boxesLeftStatsElement = document.querySelector("#boxes-left"),
+  levelStatsElement     = document.querySelector("#level");
+
+// load entire game levels
+const gameLevels = getGameLevels();
 
 // storage cache
 const CURRENTSAVE_LOCAL_KEY = "paththern.currentSave";
 let currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 
-const gameLevels = getGameLevels();
-console.log(gameLevels);
-
 if (!currentSave) {
-  localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify({
-    level: 1,
-    moves: 5,
-    dimension: {
-      x: 2,
-      y: 2
-    },
-    boxes: [
-    {
-      "rotation": 0,
-      "orientation": "start-left",
-      "correctRotation": 0
-    },
-    {
-      "rotation": 0,
-      "orientation": "right-top-line",
-      "correctRotation": 1
-    },
-    {
-      "rotation": 0,
-      "orientation": "none-line",
-      "correctRotation": 0
-    },
-    {
-      "rotation": 0,
-      "orientation": "finish-bottom",
-      "correctRotation": 0
-    }
-      ]
-  }));
+  localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify(gameLevels[0]));
 }
 
-// initial move given in this game
+// load the game based on current save
 let currentGame = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
-
 
 // render load the boxes into platform
 function renderBoxes(boxes) {
@@ -98,18 +70,32 @@ function updateStats() {
     }
   });
 
-  if (boxesNeedToSolved.length == 0) {
-
-    notification.textContent = "Level completed!";
-
-    actions.innerHTML = `<button class="action-btn" onclick="nextLevel(currentGame)">Next Level</button>
-                         <button class="action-btn" onclick="restartGame(currentGame)">Restart Level</button>
-                         <button class="action-btn">Back to Main Menu</button>`;
+  if (currentGame.moves < 1) {
+    if (boxesNeedToSolved.length == 0) {
+      triggerNotification("Level completed!",
+                          "You can go to next level.",
+                          `<button class="action-btn" onclick="nextLevel(currentGame)">Next Level</button>
+                           <button class="action-btn" onclick="restartGame(currentGame)">Restart Level</button>
+                           <button class="action-btn">Back to Main Menu</button>`);
+    } else {
+      triggerNotification("Out of moves!",
+                          "You are out of moves! Please try again.",
+                          `<button class="action-btn" onclick="restartGame(currentGame)">Try again</button>
+                           <button class="action-btn">Back to Main Menu</button>`);
+    }
+  } else {
+    if (boxesNeedToSolved.length == 0) {
+      triggerNotification("Level completed!",
+                          "You can go to next level.",
+                          `<button class="action-btn" onclick="nextLevel(currentGame)">Next Level</button>
+                           <button class="action-btn" onclick="restartGame(currentGame)">Restart Level</button>
+                           <button class="action-btn">Back to Main Menu</button>`);
+    }
   }
 
-  levelStats.textContent = currentGame.level;
-  boxesLeftStats.textContent = boxesNeedToSolved.length;
-  moveStats.textContent = currentGame.moves;
+  levelStatsElement.textContent = currentGame.level;
+  boxesLeftStatsElement.textContent = boxesNeedToSolved.length;
+  moveStatsElement.textContent = currentGame.moves;
 }
 
 function restartGame(game) {
@@ -148,8 +134,7 @@ function prepareGame(game) {
   }, 300);
 
 
-  notification.textContent = "";
-  actions.innerHTML = "";
+  triggerNotification();
 
   updateStats();
 }
@@ -160,8 +145,10 @@ function nextLevel(game) {
   })[0];
 
   currentGame = nextGame;
-
   prepareGame(nextGame);
+
+  localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify(currentGame));
+  currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 }
 
 function skipLevel(n) {
@@ -170,4 +157,15 @@ function skipLevel(n) {
   }
 }
 
+function triggerNotification(heading = "", message = "", actions = "") {
+  notificationElement.textContent = heading;
+  messageElement.textContent = message;
+  actionsElement.innerHTML = actions;
+}
+
 prepareGame(currentGame);
+
+triggerNotification("Welcome to path-thern.",
+                      "Guide the alien to spaceship by rotating the tiles and make the right way.");
+setTimeout(function() { triggerNotification(); }, 10000);
+// skipLevel(19)

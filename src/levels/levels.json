@@ -828,13 +828,13 @@
     "boxes": [
       {
         "rotation": 0,
-        "orientation": "right-bottom-line",
-        "correctRotation": 1
+        "orientation": "none-line",
+        "correctRotation": 0
       },
       {
         "rotation": 0,
-        "orientation": "horizontal-line",
-        "correctRotation": 0
+        "orientation": "left-top-line",
+        "correctRotation": 3
       },
       {
         "rotation": 0,
@@ -848,12 +848,12 @@
       },
       {
         "rotation": 0,
-        "orientation": "left-bottom-line",
-        "correctRotation": 1
+        "orientation": "start-top",
+        "correctRotation": 0
       },
       {
         "rotation": 0,
-        "orientation": "finish-right",
+        "orientation": "finish-bottom",
         "correctRotation": 0
       },
       {
@@ -868,23 +868,23 @@
       },
       {
         "rotation": 0,
-        "orientation": "none",
-        "correctRotation": 0
+        "orientation": "left-top-line",
+        "correctRotation": 2
       },
       {
         "rotation": 0,
-        "orientation": "start-top",
-        "correctRotation": 0
+        "orientation": "right-bottom-line",
+        "correctRotation": 2
       },
       {
         "rotation": 0,
-        "orientation": "none-line",
-        "correctRotation": 0
+        "orientation": "left-bottom-line",
+        "correctRotation": 2
       },
       {
         "rotation": 0,
-        "orientation": "vertical-line",
-        "correctRotation": 0
+        "orientation": "left-top-line",
+        "correctRotation": 1
       },
       {
         "rotation": 0,
@@ -894,6 +894,30 @@
       {
         "rotation": 0,
         "orientation": "right-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      }
+    ]
+  },
+  { "level": 17, "moves": 15, "dimension": { "x": 4, "y": 4 },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
         "correctRotation": 0
       },
       {
@@ -903,8 +927,380 @@
       },
       {
         "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
         "orientation": "right-bottom-line",
         "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-top",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      }
+    ]
+  },
+  { "level": 18, "moves": 20, "dimension": { "x": 5, "y": 4 },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "vertical-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "vertical-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-right",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 1
+      }
+    ]
+  },
+  { "level": 19, "moves": 20, "dimension": { "x": 5, "y": 4 },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-top",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      }
+    ]
+  },
+  { "level": 20, "moves": 20, "dimension": { "x": 5, "y": 4 },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-top",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
       }
     ]
   }

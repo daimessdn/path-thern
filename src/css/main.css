@@ -68,9 +68,26 @@ body {
 	font-size: 1em;
 }
 
+#message {
+	position: fixed;
+
+	user-select: none;
+
+	color: #fff;
+	font-size: 1em;
+
+	top: calc(2em + 16px);
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	display: flex;
+	justify-content: center;
+}
+
 #actions {
 	position: fixed;
-	bottom: calc(2em + 10px);
+	top: calc(2em + 42px);
 	left: 50%;
 	width: 50%;
 	margin-left: -25%;
@@ -95,10 +112,10 @@ body {
 #notification {
 	user-select: none;
 
-	color: #222;
+	color: #eee;
 
 	position: fixed;
-	bottom: 8px;
+	top: 8px;
 	left: 50%;
 	width: 50%;
 	margin-left: -25%;
