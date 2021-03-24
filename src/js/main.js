@@ -166,7 +166,8 @@ function triggerNotification(heading = "", message = "", actions = "") {
 
 // function for Twitter share button
 function shareOnTwitter() {
-  window.open("https://twitter.com/share?url=daimessdn.github.io/path-thern&text=I just completed a level in path-thern. Let's play! ", "_blank")
+  window.open("https://twitter.com/share?url=daimessdn.github.io/path-thern&text=I just completed a level in path-thern. Let's play! ",
+              "_blank");
 }
 
 prepareGame(currentGame);
