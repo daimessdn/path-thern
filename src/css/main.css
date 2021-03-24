@@ -67,7 +67,7 @@ body {
 
 #actions {
 	position: fixed;
-	bottom: calc(2em + 16px);
+	bottom: calc(2em + 10px);
 	left: 50%;
 	width: 50%;
 	margin-left: -25%;

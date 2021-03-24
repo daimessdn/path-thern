@@ -191,6 +191,116 @@
   },
   {
     "level": 6,
+    "moves": 5,
+    "dimension": {
+      "x": 3,
+      "y": 3
+    },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-bottom-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-right",
+        "correctRotation": 0
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "moves": 5,
+    "dimension": {
+      "x": 3,
+      "y": 3
+    },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "start-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-bottom",
+        "correctRotation": 0
+      }
+    ]
+  },
+  {
+    "level": 8,
     "moves": 10,
     "dimension": {
       "x": 3,
@@ -199,8 +309,8 @@
     "boxes": [
       {
         "rotation": 0,
-        "orientation": "left-bottom-line",
-        "correctRotation": 2
+        "orientation": "right-top-line",
+        "correctRotation": 0
       },
       {
         "rotation": 0,
@@ -219,23 +329,133 @@
       },
       {
         "rotation": 0,
-        "orientation": "start-left",
+        "orientation": "left-top-line",
+        "correctRotation": 3
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "moves": 5,
+    "dimension": {
+      "x": 3,
+      "y": 3
+    },
+    "boxes": [
+      {
+        "rotation": 0,
+        "orientation": "none-line",
         "correctRotation": 0
       },
       {
         "rotation": 0,
         "orientation": "right-bottom-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-bottom-line",
         "correctRotation": 3
       },
       {
         "rotation": 0,
-        "orientation": "right-bottom-line",
-        "correctRotation": 3
+        "orientation": "finish-left",
+        "correctRotation": 0
       },
       {
         "rotation": 0,
+        "orientation": "crossed-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-bottom",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "none-line",
+        "correctRotation": 0
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "moves": 10,
+    "dimension": {
+      "x": 3,
+      "y": 3
+    },
+    "boxes": [
+      {
+        "rotation": 0,
         "orientation": "right-bottom-line",
-        "correctRotation": 3
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "finish-right",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "start-left",
+        "correctRotation": 0
+      },
+      {
+        "rotation": 0,
+        "orientation": "right-top-line",
+        "correctRotation": 1
+      },
+      {
+        "rotation": 0,
+        "orientation": "left-top-line",
+        "correctRotation": 2
+      },
+      {
+        "rotation": 0,
+        "orientation": "horizontal-line",
+        "correctRotation": 0
       },
       {
         "rotation": 0,

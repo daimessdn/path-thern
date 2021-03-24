@@ -88,7 +88,8 @@ function updateStats() {
   const boxesNeedToSolved = currentGame.boxes.filter(box => {
     if (box.orientation !== "none-line") {
       if (box.orientation == "horizontal-line" ||
-          box.orientation == "vertical-line"
+          box.orientation == "vertical-line" ||
+          box.orientation == "crossed-line"
       ) {
         return box.rotation % 2 !== box.correctRotation;
       } else {
@@ -137,14 +138,15 @@ function prepareGame(game) {
   platform.style.height = `calc(${game.dimension.y * 5}em +
                                ${game.dimension.y * 6}px + 16px)`;
   
-  setTimeout(() => {renderBoxes(game.boxes)}, 300);
+  setTimeout(function() {
+    renderBoxes(game.boxes);
 
-  if (game.level > 1) {
     game.boxes.forEach((box, index) => {
       box.rotation = 0;
       platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
-    });   
-  }
+    });
+  }, 300);
+
 
   notification.textContent = "";
   actions.innerHTML = "";
