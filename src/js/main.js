@@ -170,7 +170,7 @@ function triggerNotification(heading = "", message = "", actions = "") {
 
 // function for sharing on social media
 function shareOnTwitter() {
-  window.open("https://twitter.com/share?url=bit.ly/path-thern&text=I just completed a level in path-thern. Let's play! ",
+  window.open("https://twitter.com/share?url=bit.ly/path-thern?123&text=I just completed a level in path-thern. Let's play! ",
               "_blank");
 }
 
