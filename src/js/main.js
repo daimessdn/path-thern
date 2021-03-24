@@ -177,6 +177,6 @@ function shareOnTwitter() {
 prepareGame(currentGame);
 
 triggerNotification("Welcome to path-thern.",
-                      "Guide the alien to spaceship by rotating the tiles and make the right way.");
+                      "Guide the alien to spaceship by rotating the tiles and create the right path.");
 setTimeout(function() { triggerNotification(); }, 10000);
 // skipLevel(19)
