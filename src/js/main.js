@@ -92,15 +92,14 @@ function updateStats() {
                            <button class="action-btn">Back to Main Menu</button>`);
     }
   }
-
-  levelStatsElement.textContent = currentGame.level;
-  boxesLeftStatsElement.textContent = boxesNeedToSolved.length;
-  moveStatsElement.textContent = currentGame.moves;
 }
 
+// function to restart current game
 function restartGame(game) {
+  // reset game moves
   currentGame.moves = currentSave.moves;
   
+  // reset box rotation
   game.boxes.forEach((box, index) => {
     box.rotation = 0;
     platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
@@ -133,12 +132,11 @@ function prepareGame(game) {
     });
   }, 300);
 
-
   triggerNotification();
-
   updateStats();
 }
 
+// function to proceed game to next level
 function nextLevel(game) {
   const nextGame = gameLevels.filter(gameLevel => {
     return gameLevel.level === (game.level + 1);
@@ -151,16 +149,24 @@ function nextLevel(game) {
   currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 }
 
+// function to skip n levels forward
 function skipLevel(n) {
   for (let i = 1; i <= n; i++) {
     nextLevel(currentGame);
   }
 }
 
+// functions to trigger notifications
+// // by changing notification elements content
 function triggerNotification(heading = "", message = "", actions = "") {
   notificationElement.textContent = heading;
   messageElement.textContent = message;
   actionsElement.innerHTML = actions;
+}
+
+// function for Twitter share button
+function shareOnTwitter() {
+  window.open("https://twitter.com/share?url=daimessdn.github.io/path-thern&text=I just completed a level in path-thern. Let's play! ")
 }
 
 prepareGame(currentGame);
