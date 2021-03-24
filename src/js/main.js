@@ -92,6 +92,10 @@ function updateStats() {
                            <button class="action-btn">Back to Main Menu</button>`);
     }
   }
+
+  levelStatsElement.textContent = currentGame.level;
+  boxesLeftStatsElement.textContent = boxesNeedToSolved.length;
+  moveStatsElement.textContent = currentGame.moves;
 }
 
 // function to restart current game
