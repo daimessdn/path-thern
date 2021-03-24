@@ -14,10 +14,17 @@ const moveStats      = document.querySelector("#moves"),
 const CURRENTSAVE_LOCAL_KEY = "paththern.currentSave";
 let currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 
+const gameLevels = getGameLevels();
+console.log(gameLevels);
+
 if (!currentSave) {
   localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify({
     level: 1,
-    moves: 10,
+    moves: 5,
+    dimension: {
+      x: 2,
+      y: 2
+    },
     boxes: [
     {
       "rotation": 0,
@@ -44,50 +51,8 @@ if (!currentSave) {
 }
 
 // initial move given in this game
-let moves = 10;
+let currentGame = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 
-// init'd boxes
-let boxes = [
-  {
-    "rotation": 0,
-    "orientation": "start-top",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "finish-left",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "left-top-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "right-top-line",
-    "correctRotation": 3
-  },
-  {
-    "rotation": 0,
-    "orientation": "horizontal-line",
-    "correctRotation": 0
-  },
-  {
-    "rotation": 0,
-    "orientation": "right-bottom-line",
-    "correctRotation": 3
-  }
-    ]
-
-const game = {
-  level: 1,
-  dimension: {
-    x: 2,
-    y: 2
-  },
-  boxes: boxes
-}
 
 // render load the boxes into platform
 function renderBoxes(boxes) {
@@ -104,25 +69,23 @@ function renderBoxes(boxes) {
 // function to rotate the box
 function rotate(element) {
   const index = Array.prototype.indexOf.call(platform.children, element);
-  const boxToBeRotated = boxes[index];
+  const boxToBeRotated = currentGame.boxes[index];
 
   if (boxToBeRotated.orientation !== "none-line" &&
       boxToBeRotated.orientation.includes("start") === false &&
       boxToBeRotated.orientation.includes("finish") === false) {
     boxToBeRotated.rotation++;
 
-    moves--;
+    currentGame.moves--;
     updateStats();
 
     element.style.transform = `rotate(${boxToBeRotated.rotation * 90}deg)`;
   }
-  console.log(game.boxes);
-  console.log(boxes);
 }
 
 // update game stats
 function updateStats() {
-  const boxesNeedToSolved = boxes.filter(box => {
+  const boxesNeedToSolved = currentGame.boxes.filter(box => {
     if (box.orientation !== "none-line") {
       if (box.orientation == "horizontal-line" ||
           box.orientation == "vertical-line"
@@ -138,28 +101,61 @@ function updateStats() {
 
     notification.textContent = "Level completed!";
 
-    actions.innerHTML = `<button class="action-btn">Next Level</button>
-                         <button class="action-btn" onclick="restartGame()">Restart Level</button>
+    actions.innerHTML = `<button class="action-btn" onclick="nextLevel(currentGame)">Next Level</button>
+                         <button class="action-btn" onclick="restartGame(currentGame)">Restart Level</button>
                          <button class="action-btn">Back to Main Menu</button>`;
   }
 
-  levelStats.textContent = game.level;
+  levelStats.textContent = currentGame.level;
   boxesLeftStats.textContent = boxesNeedToSolved.length;
-  moveStats.textContent = moves;
+  moveStats.textContent = currentGame.moves;
 }
 
-function restartGame() {
-  console.log(game);
-  moves = currentSave.moves;
-  boxes = game.boxes;
-  console.log(boxes);
-  renderBoxes(boxes);
+function restartGame(game) {
+  currentGame.moves = currentSave.moves;
   
-  updateStats();
+  game.boxes.forEach((box, index) => {
+    box.rotation = 0;
+    platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
+  });
+
+  prepareGame(currentGame);
+}
+
+function getGameLevels() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "https://raw.githubusercontent.com/daimessdn/path-thern/master/levels.json", false);
+  xhr.send()
+
+  return JSON.parse(xhr.responseText);
+}
+
+function prepareGame(game) {
+  platform.style.width = `calc(${game.dimension.x * 10}em +
+                               ${game.dimension.x * 10}px + 20px)`;
+  
+  renderBoxes(game.boxes);
+
+  game.boxes.forEach((box, index) => {
+    box.rotation = 0;
+    platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
+  });
 
   notification.textContent = "";
   actions.innerHTML = "";
+
+  updateStats();
 }
 
-renderBoxes(game.boxes);
-updateStats();
+function nextLevel(game) {
+  const nextGame = gameLevels.filter(gameLevel => {
+    return gameLevel.level === (game.level + 1);
+  })[0];
+
+  currentGame = nextGame;
+
+  prepareGame(nextGame);
+}
+
+prepareGame(currentGame);
