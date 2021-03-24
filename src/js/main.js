@@ -125,22 +125,26 @@ function restartGame(game) {
 function getGameLevels() {
   const xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "https://raw.githubusercontent.com/daimessdn/path-thern/master/src/levels/levels.json", false);
+  xhr.open("GET", "./src/levels/levels.json", false);
   xhr.send()
 
   return JSON.parse(xhr.responseText);
 }
 
 function prepareGame(game) {
-  platform.style.width = `calc(${game.dimension.x * 10}em +
-                               ${game.dimension.x * 10}px + 20px)`;
+  platform.style.width = `calc(${game.dimension.x * 5}em +
+                               ${game.dimension.x * 6}px + 16px)`;
+  platform.style.height = `calc(${game.dimension.y * 5}em +
+                               ${game.dimension.y * 6}px + 16px)`;
   
-  renderBoxes(game.boxes);
+  setTimeout(() => {renderBoxes(game.boxes)}, 300);
 
-  game.boxes.forEach((box, index) => {
-    box.rotation = 0;
-    platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
-  });
+  if (game.level > 1) {
+    game.boxes.forEach((box, index) => {
+      box.rotation = 0;
+      platform.children[index].style.transform = `rotate(${box.rotation * 90}deg)`;
+    });   
+  }
 
   notification.textContent = "";
   actions.innerHTML = "";
@@ -156,6 +160,12 @@ function nextLevel(game) {
   currentGame = nextGame;
 
   prepareGame(nextGame);
+}
+
+function skipLevel(n) {
+  for (let i = 1; i <= n; i++) {
+    nextLevel(currentGame);
+  }
 }
 
 prepareGame(currentGame);

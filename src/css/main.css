@@ -31,17 +31,20 @@ body {
 	background-color: #622f10;
 	padding: 5px;
 
-	border: 5px solid #222;
+	border: 3px solid #222;
 	border-radius: 10px;
 
-	transition: all .1s ease;
+	transition: all .3s ease;
 
-	box-shadow: 0 1em 0 0 #7e4d25, 0 calc(1em + 5px) 0 0 #222;
+	box-shadow: 0 .5em 0 0 #7e4d25, 0 calc(.5em + 3px) 0 0 #222;
 
-	width: calc(30em + 30px + 20px);
+	width: 1em;
+	height: 1em;
 }
 
 #stats {
+	user-select: none;
+
 	position: absolute;
 	left: 8px;
 	top: 8px;
@@ -55,16 +58,16 @@ body {
 
 #stats h1 {
 	font-family: "Archivo Black";
-	font-size: 5em;
+	font-size: 2.5em;
 }
 
 #stats p {
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 #actions {
 	position: fixed;
-	bottom: calc(4em + 16px);
+	bottom: calc(2em + 16px);
 	left: 50%;
 	width: 50%;
 	margin-left: -25%;
@@ -83,10 +86,12 @@ body {
 	cursor: pointer;
 
 	font-family: "Archivo Narrow";
-	font-size: 1.75em;
+	font-size: 1em;
 }
 
 #notification {
+	user-select: none;
+
 	color: #222;
 
 	position: fixed;
@@ -96,7 +101,7 @@ body {
 	margin-left: -25%;
 
 	font-family: "Archivo Black";
-	font-size: 4em;
+	font-size: 2em;
 	font-weight: bold;
 
 	text-align: center;
