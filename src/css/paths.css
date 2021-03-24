@@ -259,7 +259,7 @@
 .start-bottom div:last-child,
 .start-left div:last-child,
 .start-right div:last-child {
-	background-image: url("alien.svg");
+	background-image: url("../img/alien.svg");
 
 	width: 75%;
 	height: 75%;
@@ -275,7 +275,7 @@
 .finish-bottom div:last-child,
 .finish-left div:last-child,
 .finish-right div:last-child {
-	background-image: url("ufo.svg");
+	background-image: url("../img/ufo.svg");
 
 	width: 75%;
 	height: 75%;

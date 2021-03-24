@@ -125,7 +125,7 @@ function restartGame(game) {
 function getGameLevels() {
   const xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "https://raw.githubusercontent.com/daimessdn/path-thern/master/levels.json", false);
+  xhr.open("GET", "https://raw.githubusercontent.com/daimessdn/path-thern/master/src/levels/levels.json", false);
   xhr.send()
 
   return JSON.parse(xhr.responseText);

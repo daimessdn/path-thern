@@ -14,7 +14,7 @@ body {
 	font-family: 'Archivo Narrow', monospace;
 	font-variant-ligatures: none;
 
-	background-image: url("space.svg");
+	background-image: url("../img/space.svg");
 	background-position: center top;
 	background-size: cover;
 
