@@ -168,10 +168,14 @@ function triggerNotification(heading = "", message = "", actions = "") {
   actionsElement.innerHTML = actions;
 }
 
-// function for Twitter share button
+// function for sharing on social media
 function shareOnTwitter() {
   window.open("https://twitter.com/share?url=daimessdn.github.io/path-thern&text=I just completed a level in path-thern. Let's play! ",
               "_blank");
+}
+
+function shareToLinkedIn() {
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, "_blank");
 }
 
 prepareGame(currentGame);
