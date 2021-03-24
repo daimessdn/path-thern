@@ -43,17 +43,19 @@ function rotate(element) {
   const index = Array.prototype.indexOf.call(platform.children, element);
   const boxToBeRotated = currentGame.boxes[index];
 
-  if (boxToBeRotated.orientation !== "none-line" &&
-      boxToBeRotated.orientation.includes("start") === false &&
-      boxToBeRotated.orientation.includes("finish") === false) {
-    boxToBeRotated.rotation++;
+  if (currentGame.moves > 0 && boxesLeftStatsElement.textContent != "0") {
+    if (boxToBeRotated.orientation !== "none-line" &&
+          boxToBeRotated.orientation.includes("start") === false &&
+          boxToBeRotated.orientation.includes("finish") === false) {
+      boxToBeRotated.rotation++;
 
-    currentGame.moves--;
-    updateStats();
+        currentGame.moves--;
+        updateStats();
 
-    element.style.transform = `rotate(${boxToBeRotated.rotation * 90}deg)`;
+        element.style.transform = `rotate(${boxToBeRotated.rotation * 90}deg)`;
+      }
+    } 
   }
-}
 
 // update game stats
 function updateStats() {
@@ -170,7 +172,7 @@ function triggerNotification(heading = "", message = "", actions = "") {
 
 // function for sharing on social media
 function shareOnTwitter() {
-  window.open("https://twitter.com/share?url=bit.ly/path-thern?123&text=I just completed a level in path-thern. Let's play! ",
+  window.open("https://twitter.com/share?url=daimessdn.github.io/path-thern&text=I just completed a level in path-thern. Let's play! ",
               "_blank");
 }
 
