@@ -44,7 +44,8 @@ function rotate(element) {
   const boxToBeRotated = currentGame.boxes[index];
 
   if (currentGame.moves > 0 && boxesLeftStatsElement.textContent != "0") {
-    if (boxToBeRotated.orientation !== "none-line" &&
+    if ((boxToBeRotated.orientation !== "none-line" && 
+         boxToBeRotated.orientation !== "crossed-line") &&
           boxToBeRotated.orientation.includes("start") === false &&
           boxToBeRotated.orientation.includes("finish") === false) {
       boxToBeRotated.rotation++;
@@ -63,8 +64,7 @@ function updateStats() {
   const boxesNeedToSolved = currentGame.boxes.filter(box => {
     if (box.orientation !== "none-line") {
       if (box.orientation == "horizontal-line" ||
-          box.orientation == "vertical-line" ||
-          box.orientation == "crossed-line"
+          box.orientation == "vertical-line"
       ) {
         return box.rotation % 2 !== box.correctRotation;
       } else {
