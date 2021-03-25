@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:wght@400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Archivo Narrow', monospace;
+	font-variant-ligatures: none;
+
+	background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8)), url("../img/space.svg");
+	background-position: center top;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#platform {
+	display: flex;
+	flex-wrap: wrap;
+
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	background-color: #622f10;
+	padding: 5px;
+
+	border: 3px solid #222;
+	border-radius: 10px;
+
+	transition: all .3s ease;
+
+	box-shadow: 0 .5em 0 0 #7e4d25, 0 calc(.5em + 3px) 0 0 #222;
+
+	width: 0;
+	height: 0;
+}
+
+#stats {
+	user-select: none;
+
+	position: absolute;
+	left: 8px;
+	top: 8px;
+
+	color: #fff;
+}
+
+#stats * {
+	margin: 0;
+}
+
+#stats h1 {
+	font-family: "Archivo Black";
+	font-size: 2.5em;
+}
+
+#stats p {
+	font-size: 1em;
+}
+
+#message {
+	position: fixed;
+
+	user-select: none;
+
+	color: #fff;
+	font-size: 1em;
+
+	top: calc(2em + 16px);
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	display: flex;
+	justify-content: center;
+}
+
+#actions {
+	position: fixed;
+	top: calc(2em + 42px);
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	display: flex;
+	justify-content: center;
+}
+
+.action-btn {
+	border: none;
+	color: white;
+	background-color: #63c132;
+	border: 3px solid #222222;
+	padding: 5px;
+	margin: 5px;
+
+	cursor: pointer;
+
+	font-family: "Archivo Narrow";
+	font-size: 1em;
+}
+
+#notification {
+	user-select: none;
+
+	color: #eee;
+
+	position: fixed;
+	top: 8px;
+	left: 50%;
+	width: 50%;
+	margin-left: -25%;
+
+	font-family: "Archivo Black";
+	font-size: 2em;
+	font-weight: bold;
+
+	text-align: center;
+}

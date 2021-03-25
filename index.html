@@ -18,29 +18,134 @@
 
 	<title>path-thern</title>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
 	<link rel="stylesheet" href="src/css/main.css" />
 	<link rel="stylesheet" href="src/css/paths.css" />
 </head>
 <body>
-	<!-- <h1>path-thern.</h1>
-	<p>Rotating puzzle game and create a connection path.</p> -->
-	<div id="platform"></div>
+	<nav>
+		<ul>
+			<li>
+				<a class="action-btn" href="#home">Home</a>
+			</li>
 
-	<div id="stats">
-		<p>LEVEL</p>
-		<h1 id="level">x</h1>
+			<li>
+				<a class="action-btn" href="#about">About</a>
+			</li>
 
-		<p>REMAININIG MOVES</p>
-		<h1 id="moves">N</h1>
-		
-		<p>TILES TO BE SOLVED</p>
-		<h1 id="boxes-left">M</h1>
-	</div>
+			<li>
+				<a class="action-btn" href="https://github.com/daimessdn/path-thern"><i class="fab fa-github"></i></a>
+			</li>
+		</ul>
+	</nav>
 
-	<div id="notification"></div>
-	<div id="message"></div>
-	<div id="actions"></div>
+	<header id="home">
+		<div id="animation-background">
+			<div class="box float1 right-bottom-line"><div></div><div></div></div>
+			<div class="box float2 start-top"><div></div><div></div></div>
+			<div class="box float3 horizontal-line"><div></div><div></div></div>
+			<div class="box float4 left-top-line"><div></div><div></div></div>
+			<div class="box float5 finish-left"><div></div><div></div></div>
+			<div class="box float6 start-right"><div></div><div></div></div>
+			<div class="box float7 left-bottom-line"><div></div><div></div></div>
+		</div>
 
-	<script src="src/js/main.js"></script>
+		<div class="container container-flex">
+			<h1>Welcome to the path-thern world!</h1>
+			<h2>Help the alien to find his spaceships by completing his puzzles.</h2>
+			<p><a href="game.html" class="action-btn">Play now!</a>
+		</div>
+	</header>
+
+	<main>
+		<section id="about">
+			<div class="container container-flex">
+				<h2>About path-thern</h2>
+
+				<img id="demo-image" src="src/img/demo/smalldemo1.gif" alt="path-thern-demo" />
+
+				<p><strong>path-thern</strong> is a puzzle game played by rotating boxes on a platform in certain moves. The boxes are rotated to produce a path which the alien can get to his spaceship. </p>
+
+				<p>For the first start, you can rotate the box by click the box.</p>
+
+				<div id="box-playground"></div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+        <div>
+            <p>
+                Code with
+                <img class="language-logo" src="src/img/icon/jslogo.svg" title="JavaScript" alt="JavaScript" /><br />and also <i class="fas fa-heart"></i> by daimessdn 👋
+            </p>
+
+            <p>
+                In order to participate in <a href="https://mintbean.io" target="_blank"><img src="src/img/icon/bean.svg" style="width: 18px;" alt="Mintbean"> Mintbean</a> Hackathon. Why don't you also <a href="https://mintbean.io" target="_blank">join</a>?
+            </p>
+        </div>
+
+        <div>
+            <p>Reach me on<br />
+                <ul class="social-media-footer">
+                    <li><a href="https://www.github.com/daimessdn" target="_blank">
+                        <img src="src/img/icon/github.svg" alt="GitHub" title="GitHub" />
+                        </a></li> 
+                    <li><a href="https://www.twitter.com/daimessdn" target="_blank">
+                        <img src="src/img/icon/twitter.svg" alt="Twitter" title="Twitter" />
+                        </a></li>
+                    <li><a href="https://www.linkedin.com/in/dimaswehhh" target="_blank">
+                        <img src="src/img/icon/linkedin.svg" alt="Linkedin" title="Linkedin" />
+                        </a></li> 
+                    <li><a href="mailto:daimessdn@gmail.com" target="_blank">
+                        <img src="src/img/icon/email.svg" alt="Email" title="Email" />
+                        </a></li> 
+                </ul>
+            </p>
+        </div>
+    </footer>
+
+
+	<script>
+		const playground = document.querySelector("#box-playground");
+
+		const boxes = [
+			{
+				rotation: 0,
+				orientation: "horizontal-line"
+			},
+			{
+				rotation: 0,
+				orientation: "left-bottom-line"
+			},
+			{
+				rotation: 0,
+				orientation: "left-top-line"
+			},
+			{
+				rotation: 0,
+				orientation: "right-bottom-line"
+			},
+			{
+				rotation: 0,
+				orientation: "vertical-line"
+			}
+		];
+
+		playground.innerHTML = "";
+
+		boxes.forEach(box => {
+			playground.innerHTML += `<div class="box ${box.orientation}" onclick="rotateBox(this)"><div></div><div></div></div>`
+		});
+
+		function rotateBox(element) {
+			const index = Array.prototype.indexOf.call(playground.children, element);
+  			const boxToBeRotated = boxes[index];
+
+  			boxToBeRotated.rotation++;
+  			element.style.transform = `rotate(${boxToBeRotated.rotation * 90}deg)`;
+		}
+	</script>
 </body>
 </html>
