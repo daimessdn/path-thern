@@ -114,6 +114,11 @@ section {
 	height: 100vh;
 }
 
+section a {
+	color: #fff;
+	font-weight: bold;
+}
+
 p {
 	font-size: 1.2em;
 }
@@ -157,6 +162,8 @@ footer div {
 
 footer div:last-child {
     align-items: flex-end;
+
+    text-align: right;
 }
 
 footer p {
