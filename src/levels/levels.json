@@ -538,7 +538,7 @@
       {
         "rotation": 0,
         "orientation": "crossed-line",
-        "correctRotation": 1
+        "correctRotation": 0
       },
       {
         "rotation": 0,
