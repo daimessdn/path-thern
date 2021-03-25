@@ -149,8 +149,8 @@ function nextLevel(game) {
   currentGame = JSON.parse(JSON.stringify(nextGame));
   prepareGame(nextGame);
 
-  localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify(currentGame));
-  currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
+  // localStorage.setItem(CURRENTSAVE_LOCAL_KEY, JSON.stringify(currentGame));
+  // currentSave = JSON.parse(localStorage.getItem(CURRENTSAVE_LOCAL_KEY));
 }
 
 // function to proceed game to next level
@@ -224,4 +224,4 @@ function shareOnLinkedIn() {
 prepareGame(currentGame);
 triggerNotification("Welcome to path-thern.",
                       "Guide the alien to spaceship by rotating the tiles and create the right path.");
-// skipLevel(19)
+skipLevel(17)
