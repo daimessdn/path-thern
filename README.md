@@ -1,5 +1,8 @@
 # path-thern
 
+## latest update
+- add 10 more levels (now, we have 30 levels on this game!)!!!
+
 ## overview
 Rotating pattern path puzzle game.
 
